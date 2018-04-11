@@ -1,12 +1,12 @@
 function produceDrivingRange(range){
   return (beg, end) => {
-    const begInt = Number(beg.slice(0,2));
-    const endInt = Number(end.slice(0,2));
-      if (endInt - begInt > range) {
-        let result = Math.abs(endInt - begInt - range);
+    let begInt = parseInt(beg);
+    let endInt = parseInt(end);
+    let distance = Math.abs(endInt - begInt);
+    let result = range - distance
+      if (result > 0) {
         return `${result} blocks out of range`;
     } else {
-        let result = Math.abs(endInt - begInt - range);
         return `within range by ${result}`;
     };
   };
